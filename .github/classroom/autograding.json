@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Rest api",
+      "setup": "npm install; echo RElHSVRSQU5TSVRfQVBJX0tFWT1iM2JlMDc5YTJkNmI0ZWQzYjM4M2ZkOTdjZDdhYWYyMwo= | base64 --decode > .env",
+      "run": "npm test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 2
+    },
+    {
+      "name": "Route planning with GraphQL",
+      "setup": "",
+      "run": "npm start \"helsinki-vantaa lentoasema\" \"suomenlinna\"",
+      "input": "",
+      "output": "Kauppatori",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 3
+    }
+  ]
+}

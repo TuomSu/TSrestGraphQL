@@ -1,6 +1,6 @@
 import { addressSearch } from './addressSearch';
 import { RoutingResponse, Itinerary, Leg, Plan, Place, Mode } from './types/RoutingApi';
-
+import { getAddressesAndCoordinates } from './addressSearch';
 
 async function main() {
     // make sure that the user has given additional parameters for locations
@@ -13,8 +13,15 @@ async function main() {
     const to = process.argv[3];
 
     // TODO: search geolocations for the given strings and plan an itinerary
-    console.log({ from, to });
-}
+    try {
+        const itinerary = await getAddressesAndCoordinates(from, to);
+        //console.log('Itinerary:', itinerary);
+      } catch (error) {
+        console.error('Error in main:', error);
+      }
+    }
+    //console.log({ from, to });
+
 
 main();
 
